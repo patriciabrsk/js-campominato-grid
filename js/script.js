@@ -16,8 +16,8 @@
  * 
  */
 
-const gameSelection = document.querySelector('[name="game-type"]:selected').value;
 const grid = document.getElementById('grid');
+const gameSelection = document.querySelector('.form-select').value;
 
 const playBtn = document.getElementById('play');
 

@@ -16,8 +16,23 @@
  * 
  */
 
-const gameSelection = document.querySelector('[class="game-type"]:selected').value;
+const gameSelection = document.querySelector('[name="game-type"]:selected').value;
 const grid = document.getElementById('grid');
+
+const playBtn = document.getElementById('play');
+
+// Click event for play button
+playBtn.addEventListener('click', function () {
+    grid.innerHTML = ''; 
+
+    if (gameSelection == 'easy') {
+        createGrid(100);
+    } else if (gameSelection == 'medium') {
+        createGrid(81);
+    } else if (gameSelection == 'hard') {
+        createGrid(49);
+    }
+});
 
 // Creates new square grid element according to game selection
 function createGrid (max) {
@@ -43,18 +58,5 @@ function createGrid (max) {
             this.classList.toggle('clicked');
         })
     }
+}
 
-const playBtn = document.getElementById('play');
-
-// Click event for play button
-playBtn.addEventListener('click', function () {
-    grid.innerHTML = ''; 
-
-    if (gameSelection == 'easy') {
-        createGrid(100);
-    } else if (gameSelection == 'medium') {
-        createGrid(81);
-    } else if (gameSelection == 'hard') {
-        createGrid(49);
-    }
-});

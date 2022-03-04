@@ -39,7 +39,6 @@ function createGrid (max) {
     const currentSquare = document.createElement('div');
     currentSquare.classList.add('grid-square');
     
-
     for (let i = 1; i <= max; i++) {
         const currentSquare = document.createElement('div');
         currentSquare.classList.add('grid-square');

@@ -1,0 +1,45 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Roboto Mono', monospace;
+}
+
+main {
+    background-color: #7fffd3;
+}
+
+select .form-select {
+    display: inline-block;
+}
+
+div#grid {
+    width: 700px;
+    height: 60vh;
+}
+
+div#grid .grid-square {
+    border: 2px solid black;
+    color: black;
+    cursor: crosshair;
+}
+
+div#grid .grid-square:hover {
+    background-color:  #51a386;
+}
+
+div#grid .grid-square.clicked {
+    background-color: #6495ec;
+}
+
+.easy {
+    width: calc(100% / 7);
+}
+
+.medium{
+    width: calc(100% / 9);
+}
+
+.hard {
+    width: calc(100% / 10);
+}

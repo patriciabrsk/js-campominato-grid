@@ -3,6 +3,7 @@
 
 body {
     font-family: 'Roboto Mono', monospace;
+    height: 100%;
 }
 
 main {
@@ -34,12 +35,15 @@ div#grid .grid-square.clicked {
 
 .easy {
     width: calc(100% / 10);
+    height: 50px;
 }
 
 .medium{
     width: calc(100% / 9);
+    height: 50px;
 }
 
 .hard {
     width: calc(100% / 7);
+    height: 50px;
 }

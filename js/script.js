@@ -25,11 +25,11 @@ const playBtn = document.getElementById('play');
 playBtn.addEventListener('click', function () {
     grid.innerHTML = ''; 
 
-    if (gameSelection == 'easy') {
+    if (gameSelection === 'easy') {
         createGrid(100);
-    } else if (gameSelection == 'medium') {
+    } else if (gameSelection === 'medium') {
         createGrid(81);
-    } else if (gameSelection == 'hard') {
+    } else if (gameSelection === 'hard') {
         createGrid(49);
     }
 });

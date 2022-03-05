@@ -14,7 +14,7 @@ select .form-select {
 }
 
 div#grid {
-    width: 700px;
+    width: 800px;
     height: 60vh;
 }
 
@@ -37,9 +37,9 @@ div#grid .grid-square.clicked {
 }
 
 .medium{
-    width: calc(100% / 7);
+    width: calc(100% / 9);
 }
 
 .hard {
-    width: calc(100% / 9);
+    width: calc(100% / 7);
 }

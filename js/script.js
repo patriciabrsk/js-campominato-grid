@@ -41,7 +41,11 @@ function createGrid (max) {
     
     for (let i = 1; i <= max; i++) {
         const currentSquare = document.createElement('div');
-        currentSquare.classList.add('grid-square');
+        currentSquare.classList.add(
+            'grid-square', 
+            'd-flex', 
+            'justify-content-center',
+            'align-items-center');
         currentSquare.innerHTML = i;
         grid.appendChild(currentSquare);
 

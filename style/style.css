@@ -21,7 +21,7 @@ div#grid {
 }
 
 div#grid .grid-square {
-    border: 2px solid black;
+    border: 1px solid black;
     color: black;
     cursor: crosshair;
 }
@@ -32,19 +32,4 @@ div#grid .grid-square:hover {
 
 div#grid .grid-square.clicked {
     background-color: #6495ec;
-}
-
-.easy {
-    width: calc(100% / 10);
-
-}
-
-.medium{
-    width: calc(100% / 9);
-
-}
-
-.hard {
-    width: calc(100% / 7);
-
 }

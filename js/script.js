@@ -8,7 +8,6 @@
     con difficoltà 3 => tra 1 e 49
     
     Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro.
-
     Scriviamo prima cosa vogliamo fare passo passo in italiano, dividiamo il lavoro in micro problemi.
     Ad esempio:  di cosa ho bisogno per generare i numeri?
     Proviamo sempre prima con dei console.log() per capire se stiamo ricevendo i dati giusti.
@@ -17,49 +16,57 @@
  */
 
 const grid = document.getElementById('grid');
-const gameSelection = document.querySelector('.form-select').value;
 
 const playBtn = document.getElementById('play');
-
-// Click event for play button
 playBtn.addEventListener('click', function () {
-    grid.innerHTML = ''; 
-
-    if (gameSelection === 'easy') {
-        createGrid(100);
-    } else if (gameSelection === 'medium') {
-        createGrid(81);
-    } else if (gameSelection === 'hard') {
-        createGrid(49);
-    }
+    createNewGrid();
 });
 
-// Creates new square grid element according to game selection
-function createGrid (max) {
-    const currentSquare = document.createElement('div');
-    currentSquare.classList.add('grid-square');
-    
-    for (let i = 1; i <= max; i++) {
-        const currentSquare = document.createElement('div');
-        currentSquare.classList.add(
-            'grid-square', 
-            'd-flex', 
-            'justify-content-center',
-            'align-items-center');
-        currentSquare.innerHTML = i;
-        grid.appendChild(currentSquare);
+function createNewGrid() {
+    grid.innerHTML = ''; 
 
-        if (max == 100) {
-            currentSquare.classList.add('easy');
-        } else if (max == 81) {
-            currentSquare.classList.add('medium');
-        } else {
-            currentSquare.classList.add('hard');
-        }
+    const gameSelection = document.querySelector('.form-select').value;
 
-        currentSquare.addEventListener('click', function() {
-            this.classList.toggle('clicked');
-        })
+    let squaresPerRow;
+    let squaresNum;
+
+    switch (gameSelection) {
+        case "easy":
+        default:
+            squaresNum = 100;
+            break;
+        case "medium":
+            squaresNum = 81;
+            break;
+        case "hard":
+            squaresNum = 49;
+            break;
     }
+
+    squaresPerRow = Math.sqrt(squaresNum);
+
+    for ( let i = 1; i <= squaresNum; i++){
+        const square = createSquare(i, squaresPerRow);
+        square.addEventListener('click', function(){
+            this.classList.toggle('clicked');
+        });
+        grid.appendChild(square);
+    }
+}
+
+function createSquare(max, squaresPerRow) {
+    let square = document.createElement('div');
+    square.classList.add(
+        'grid-square', 
+        'd-flex', 
+        'justify-content-center',
+        'align-items-center');
+
+        square.style.width = `calc(100% / ${squaresPerRow})`
+        square.style.height = square.style.width;
+
+        square.innerHTML = `<span>${max}</span>`;
+
+        return square;
 }
 
